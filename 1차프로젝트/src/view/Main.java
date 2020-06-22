@@ -6,14 +6,26 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.JList;
+import javax.swing.JTable;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Main {
 
 	private JFrame frame;
 	private JTextField textField;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -73,6 +85,39 @@ public class Main {
 		JButton btnNewButton_2 = new JButton("\uAC80\uC0C9");
 		btnNewButton_2.setBounds(480, 38, 66, 30);
 		frame.getContentPane().add(btnNewButton_2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				List listGUI = new List();
+				frame.setVisible(false);
+			}
+		});
+		scrollPane.setBounds(40, 80, 580, 352);
+		frame.getContentPane().add(scrollPane);
+		
+		String[] columnNames = {"First Name",
+                "Last Name",
+                "Sport",
+                "# of Years",
+                "Vegetarian"};
+		
+		String[][] arr = new String[19][];
+		String[] data = new String[19];
+		try {
+			Scanner sc = new Scanner(new File("C:\\Users\\SMHRD\\Desktop\\광주광역시_서구_자전거대여소_20190228.csv"));
+			sc.nextLine();
+			for (int i = 0; sc.hasNextLine();i++) {
+				data = sc.nextLine().split(",");
+				arr[i] = data;
+			}
+			System.out.println(Arrays.toString(arr[0]));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		table = new JTable(arr, columnNames);
+		table.setEnabled(false);
+		scrollPane.setViewportView(table);
 	}
-
 }
