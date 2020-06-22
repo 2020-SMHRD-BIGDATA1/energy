@@ -16,6 +16,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Join {
 
@@ -165,6 +168,15 @@ public class Join {
 		panel_1_2.add(lblNewLabel_1_2);
 		
 		inputAddr = new JTextField();
+		inputAddr.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				inputAddr.setText("");
+				inputAddr.setForeground(Color.BLACK);
+			}
+		});
+		inputAddr.setForeground(Color.LIGHT_GRAY);
+		inputAddr.setText("½Ã/±¸/µ¿");
 		inputAddr.setColumns(10);
 		inputAddr.setBounds(102, 0, 268, 46);
 		panel_1_2.add(inputAddr);
@@ -231,6 +243,11 @@ public class Join {
 		frame.getContentPane().add(btnJoin);
 		
 		JButton btnCancel = new JButton("\uCDE8\uC18C");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
 		btnCancel.setBounds(194, 475, 97, 23);
 		frame.getContentPane().add(btnCancel);
 	}
