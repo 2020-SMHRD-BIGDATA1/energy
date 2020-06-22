@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 import controller.Controller;
 import model.UserDAO;
 import model.UserVO;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Color;
 
 public class MyInfo {
 
@@ -102,14 +105,18 @@ public class MyInfo {
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 
-		JLabel lblNewLabel_3_1 = new JLabel(
-				"\uD0C8\uD1F4\uD558\uB824\uBA74\uBE44\uBC00\uBC88\uD638\uC785\uB825\uD574\uC8FC\uC138\uC694");
-		lblNewLabel_3_1.setBounds(106, 180, 213, 15);
-		frame.getContentPane().add(lblNewLabel_3_1);
-
 		txt_pw = new JTextField();
+		txt_pw.setForeground(Color.LIGHT_GRAY);
+		txt_pw.setText("탈퇴하려면 비밀번호를 입력해주세요");
+		txt_pw.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				txt_pw.setText("");
+				txt_pw.setForeground(Color.BLACK);
+			}
+		});
 		txt_pw.setColumns(10);
-		txt_pw.setBounds(141, 205, 116, 21);
+		txt_pw.setBounds(49, 205, 208, 21);
 		frame.getContentPane().add(txt_pw);
 
 	}
