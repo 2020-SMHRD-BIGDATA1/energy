@@ -3,6 +3,7 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JButton;
 
 public class ManagerInfo {
 
@@ -36,8 +37,13 @@ public class ManagerInfo {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 589, 389);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("\uB4F1\uB85D/\uC218\uC815");
+		btnNewButton.setBounds(205, 275, 122, 32);
+		frame.getContentPane().add(btnNewButton);
 	}
 
 }

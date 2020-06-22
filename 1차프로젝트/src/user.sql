@@ -7,4 +7,27 @@ create table users(
 	addr varchar(20)
 )
 
-select * from users;
+create table public_cycle (
+	info_no number(20),
+	name varchar(50),
+	location varchar(100),
+	cycle_count number(20)
+)
+
+create table individual_cycle (
+	name varchar(50),
+	location varchar(100),
+	cycle_count number(20),
+	manager_id varchar(50)
+)
+
+create table cycle_kind (
+	info_no number(20),
+	manger_id varchar(50),
+	kind varchar(50),
+	price number(10),
+	cycle_count number(20)
+)
+
+
+select * from INDIVIDUAL_CYCLE;

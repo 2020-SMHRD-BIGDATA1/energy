@@ -3,6 +3,7 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Map {
 
@@ -36,8 +37,13 @@ public class Map {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 636, 447);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\uC9C0\uB3C4");
+		lblNewLabel.setBounds(38, 23, 519, 313);
+		frame.getContentPane().add(lblNewLabel);
 	}
 
 }

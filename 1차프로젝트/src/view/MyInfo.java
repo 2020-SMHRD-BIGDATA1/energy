@@ -118,6 +118,22 @@ public class MyInfo {
 		txt_pw.setColumns(10);
 		txt_pw.setBounds(49, 205, 208, 21);
 		frame.getContentPane().add(txt_pw);
+		
+		JButton btnNewButton = new JButton("\uC608\uC57D\uD604\uD669");
+		btnNewButton.setBounds(283, 59, 97, 23);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\uCDA9\uC804\uD558\uAE30");
+		btnNewButton_1.setBounds(283, 99, 97, 23);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("\uC218\uC815");
+		btnNewButton_2.setBounds(283, 137, 97, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_1_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		btnNewButton_1_1.setBounds(269, 171, 97, 23);
+		frame.getContentPane().add(btnNewButton_1_1);
 
 	}
 
