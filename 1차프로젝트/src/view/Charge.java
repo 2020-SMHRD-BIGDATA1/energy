@@ -92,5 +92,6 @@ public class Charge {
 		money = new JLabel("New label");
 		money.setBounds(150, 34, 57, 15);
 		frame.getContentPane().add(money);
+
 	}
 }

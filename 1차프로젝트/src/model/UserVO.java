@@ -20,6 +20,7 @@ public class UserVO {
 		this.phone = phone;
 		this.money = money;
 	}
+	
 	public UserVO(String id, String pw, String name, int age, String addr, String phone) {
 		this.id = id;
 		this.pw = pw;
@@ -43,17 +44,27 @@ public class UserVO {
 		this.name = name;
 	}
 
-
-	public UserVO(String id, int money) {
-		this.id = id;
-		this.money = money;
-	}
 	public UserVO(String id, String pw, String name, int money) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.money = money;
 	}
+
+	public UserVO(String id, String pw, String addr, String phone) {
+		this.id = id;
+		this.pw = pw;
+		this.addr = addr;
+		this.phone = phone;
+	}
+
+	public UserVO(String id, int money) {
+		this.id = id;
+		this.money = money;
+	}
+	
+	
+
 	public String getId() {
 		return id;
 	}
