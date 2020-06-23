@@ -25,7 +25,6 @@ public class Controller {
 		int cnt = dao.findId(id);
 		return cnt;
 	}
-
 	public int join(UserVO joinUser) {
 		int cnt = dao.insertUser(joinUser);
 		return cnt;
