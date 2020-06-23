@@ -22,6 +22,9 @@ public class MyInfo {
 	public static Controller controller = Login.controller;
 	private UserDAO dao = new UserDAO();
 	private JTextField txt_pw;
+	private JTextField change_phone;
+	private JTextField change_pw;
+	private JTextField change_addr;
 
 	/**
 	 * Launch the application.
@@ -78,11 +81,11 @@ public class MyInfo {
 		lblNewLabel.setBounds(173, 22, 57, 15);
 		frame.getContentPane().add(lblNewLabel);
 
-		JLabel lblNewLabel_1 = new JLabel("\uC774\uB984");
+		JLabel lblNewLabel_1 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_1.setBounds(72, 63, 57, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 
-		JLabel lblNewLabel_2 = new JLabel("\uC544\uC774\uB514");
+		JLabel lblNewLabel_2 = new JLabel("\uC8FC\uC18C");
 		lblNewLabel_2.setBounds(72, 103, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 
@@ -90,20 +93,20 @@ public class MyInfo {
 		lblNewLabel_3.setBounds(72, 141, 57, 15);
 		frame.getContentPane().add(lblNewLabel_3);
 
-		JTextField textField = new JTextField();
-		textField.setBounds(141, 60, 116, 21);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		change_phone = new JTextField();
+		change_phone.setBounds(141, 60, 116, 21);
+		frame.getContentPane().add(change_phone);
+		change_phone.setColumns(10);
 
-		JTextField textField_1 = new JTextField();
-		textField_1.setBounds(141, 100, 116, 21);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		change_addr = new JTextField();
+		change_addr.setBounds(141, 100, 116, 21);
+		frame.getContentPane().add(change_addr);
+		change_addr.setColumns(10);
 
-		JTextField textField_2 = new JTextField();
-		textField_2.setBounds(141, 138, 116, 21);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		change_pw = new JTextField();
+		change_pw.setBounds(141, 138, 116, 21);
+		frame.getContentPane().add(change_pw);
+		change_pw.setColumns(10);
 
 		txt_pw = new JTextField();
 		txt_pw.setForeground(Color.LIGHT_GRAY);
@@ -124,12 +127,40 @@ public class MyInfo {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\uCDA9\uC804\uD558\uAE30");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_1.setBounds(283, 99, 97, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("\uC218\uC815");
-		btnNewButton_2.setBounds(283, 137, 97, 23);
-		frame.getContentPane().add(btnNewButton_2);
+		JButton btnChange = new JButton("\uC218\uC815");
+		btnChange.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String id = controller.getLoginUser().getId();
+				String phone = change_phone.getText();
+				String addr = change_addr.getText();
+				String pw = change_pw.getText();
+				
+				UserVO change = new UserVO(id, pw, addr, phone);
+				
+				int cnt = controller.changeUser(change);
+				
+				if (cnt > 0) {
+					JOptionPane.showMessageDialog(frame, "수정이 성공되었습니다", "수정결과", JOptionPane.PLAIN_MESSAGE);
+				}
+				else {
+					JOptionPane.showMessageDialog(frame, "수정이 실패되었습니다", "수정결과", JOptionPane.PLAIN_MESSAGE);
+				}
+				
+				
+		
+				
+			}
+		});
+		btnChange.setBounds(283, 137, 97, 23);
+		frame.getContentPane().add(btnChange);
 		
 		JButton btnNewButton_1_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
 		btnNewButton_1_1.setBounds(269, 171, 97, 23);

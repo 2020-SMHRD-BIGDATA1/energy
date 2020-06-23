@@ -64,6 +64,9 @@ public class Charge {
 		JButton btnNewButton_1 = new JButton("<-");
 		btnNewButton_1.setBounds(0, 0, 72, 27);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(148, 31, 116, 21);
+		frame.getContentPane().add(lblNewLabel_2);
 	}
-
 }

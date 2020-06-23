@@ -29,5 +29,11 @@ create table cycle_kind (
 	cycle_count number(20)
 )
 
+create table test1 (
+	a varchar(50)
+)
+
+load data infile 'C:\\Users\\SMHRD\\Desktop\\광주광역시_서구_자전거대여소_20190228.csv' into table test1 character set utf8 fields terminated by ','
+
 
 select * from INDIVIDUAL_CYCLE;

@@ -31,4 +31,12 @@ public class Controller {
 		return cnt;
 	}
 
+	public int changeUser(UserVO change) {
+		
+		int cnt = dao.Change(change);
+		
+		return cnt;
+			
+	}
+
 }

@@ -33,6 +33,14 @@ public class UserVO {
 	}
 
 
+	public UserVO(String id, String pw, String addr, String phone) {
+		this.id = id;
+		this.pw = pw;
+		this.addr = addr;
+		this.phone = phone;
+	}
+
+
 	public String getId() {
 		return id;
 	}

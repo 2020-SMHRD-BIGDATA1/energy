@@ -26,6 +26,7 @@ public class Main {
 	private JFrame frame;
 	private JTextField textField;
 	private JTable table;
+	
 
 	/**
 	 * Launch the application.
