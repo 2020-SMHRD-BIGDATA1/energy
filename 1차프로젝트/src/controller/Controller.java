@@ -30,7 +30,6 @@ public class Controller {
 		int cnt = dao.insertUser(joinUser);
 		return cnt;
 	}
-
 	public int changeUser(UserVO change) {
 		
 		int cnt = dao.Change(change);
