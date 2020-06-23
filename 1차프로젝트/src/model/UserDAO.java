@@ -6,12 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import controller.Controller;
+import view.Login;
+
 public class UserDAO {
 	
 	private Connection conn;
 	private PreparedStatement pst;
 	private ResultSet rs;
-	
+	private Controller controller = Login.controller;
 	private void getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -85,7 +88,7 @@ public class UserDAO {
 		
 		try {
 			
-			String sql = "insert into users values(?, ?, ?, ?, ?, ?)";
+			String sql = "insert into users values(?, ?, ?, ?, ?, ?,?)";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, joinUser.getId());
 			pst.setString(2, joinUser.getPw());
@@ -93,6 +96,7 @@ public class UserDAO {
 			pst.setInt(4, joinUser.getAge());
 			pst.setString(5, joinUser.getAddr());
 			pst.setString(6, joinUser.getPhone());
+			pst.setInt(7, joinUser.getMoney());
 			
 			cnt = pst.executeUpdate();
 		} catch (SQLException e) {
@@ -120,7 +124,8 @@ public class UserDAO {
 	            String id = rs.getString("id");
 	            String pw = rs.getString("pw");
 	            String name = rs.getString("name");
-	            loginUser = new UserVO(id, pw, name);
+	            int money = rs.getInt("money");
+	            loginUser = new UserVO(id, pw, name,money);
 
 	         }
 
@@ -152,7 +157,52 @@ public class UserDAO {
 		   }
 		   return cnt;
 	}
+	public int charge(int money) {
+		int cnt = 0;
+		getConnection();
+		   try {
+			  System.out.println(controller.getLoginUser().getId());
+		      String sql = "UPDATE users SET money = ? WHERE id = ?";
+		      pst =conn.prepareStatement(sql);
+		      pst.setInt(1, money);
+		      pst.setString(2,controller.getLoginUser().getId());
+		      cnt =pst.executeUpdate();
+		      
+		   } catch (SQLException e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		   }finally {
+		      close();
+		   }
+		   if(cnt>0) {
+		      return cnt;
+		   }
+		   return cnt;
+	}
 
+	   public int updatemoney(UserVO money) {
+	         int cnt = 0;
+	         getConnection();
+	            try {
+	              
+	               String sql = "UPDATE users SET money = ? WHERE id = ?";
+	              
+	               pst =conn.prepareStatement(sql);
+	               pst.setInt(1, money.getMoney());
+	               pst.setString(2,money.getId());
+	               cnt =pst.executeUpdate();
+	               
+	            } catch (SQLException e) {
+	               // TODO Auto-generated catch block
+	               e.printStackTrace();
+	            }finally {
+	               close();
+	            }
+	            if(cnt>0) {
+	               return cnt;
+	            }
+	            return cnt;
+	      }
 	}
 
 

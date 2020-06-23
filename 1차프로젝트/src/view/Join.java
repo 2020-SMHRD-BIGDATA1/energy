@@ -30,7 +30,7 @@ public class Join {
 	private JTextField inputAge;
 	private JTextField inputAddr;
 	private JTextField inputPhone;
-	private UserDAO dao = new UserDAO();
+	public static UserDAO dao = new UserDAO();
 	private int overlapId = 0;
 	private int overlapPw = 0;
 	private static Controller controller = Login.controller;
@@ -204,6 +204,7 @@ public class Join {
 				int age = Integer.parseInt(inputAge.getText());
 				String addr = inputAddr.getText();
 				String phone = inputPhone.getText();
+			
 				
 				if (inputPw.getText().equals(inputPwCheck.getText())) {
 					String pw = inputPw.getText();

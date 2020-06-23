@@ -8,8 +8,18 @@ public class UserVO {
 	private int age;
 	private String addr;
 	private String phone;
+	private int money;
 	
 	
+	public UserVO(String id, String pw, String name, int age, String addr, String phone,int money) {
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.age = age;
+		this.addr = addr;
+		this.phone = phone;
+		this.money = money;
+	}
 	public UserVO(String id, String pw, String name, int age, String addr, String phone) {
 		this.id = id;
 		this.pw = pw;
@@ -17,6 +27,7 @@ public class UserVO {
 		this.age = age;
 		this.addr = addr;
 		this.phone = phone;
+		
 	}
 	
 	
@@ -33,6 +44,16 @@ public class UserVO {
 	}
 
 
+	public UserVO(String id, int money) {
+		this.id = id;
+		this.money = money;
+	}
+	public UserVO(String id, String pw, String name, int money) {
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.money = money;
+	}
 	public String getId() {
 		return id;
 	}
@@ -48,6 +69,16 @@ public class UserVO {
 	public String getName() {
 		return name;
 	}
+	public int getMoney() {
+		return money;
+	}
+
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+
 	public void setName(String name) {
 		this.name = name;
 	}

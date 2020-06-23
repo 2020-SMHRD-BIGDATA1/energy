@@ -20,7 +20,7 @@ public class Login {
 	private JTextField input_ID;
 	private JPasswordField input_PW;
 	public static Controller controller = new Controller();
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -42,7 +42,7 @@ public class Login {
 	 */
 	public Login() {
 		initialize();
-		frame.setVisible(true);
+//		frame.setVisible(true);
 	}
 
 	/**

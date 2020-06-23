@@ -1,10 +1,11 @@
 create table users(
-	id varchar(50),
-	pw varchar(50),
-	name varchar(50),
-	age number(10),
-	phone varchar(20),
-	addr varchar(20)
+	id varchar(50) ,
+	pw varchar(50) ,
+	name varchar(50)  ,
+	age number(10) ,
+	phone varchar(20) ,
+	addr varchar(20),
+	money number(10) 
 )
 
 create table public_cycle (
@@ -30,4 +31,7 @@ create table cycle_kind (
 )
 
 
-select * from INDIVIDUAL_CYCLE;
+select * from users;
+drop table users;
+
+alter users add constraint default 0 money;

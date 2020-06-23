@@ -124,6 +124,12 @@ public class MyInfo {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\uCDA9\uC804\uD558\uAE30");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Charge charge = new Charge();
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_1.setBounds(283, 99, 97, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		

@@ -94,30 +94,30 @@ public class Main {
 				frame.setVisible(false);
 			}
 		});
-		scrollPane.setBounds(40, 80, 580, 352);
-		frame.getContentPane().add(scrollPane);
-		
-		String[] columnNames = {"First Name",
-                "Last Name",
-                "Sport",
-                "# of Years",
-                "Vegetarian"};
-		
-		String[][] arr = new String[19][];
-		String[] data = new String[19];
-		try {
-			Scanner sc = new Scanner(new File("C:\\Users\\SMHRD\\Desktop\\광주광역시_서구_자전거대여소_20190228.csv"));
-			sc.nextLine();
-			for (int i = 0; sc.hasNextLine();i++) {
-				data = sc.nextLine().split(",");
-				arr[i] = data;
-			}
-			System.out.println(Arrays.toString(arr[0]));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		table = new JTable(arr, columnNames);
-		table.setEnabled(false);
-		scrollPane.setViewportView(table);
+//		scrollPane.setBounds(40, 80, 580, 352);
+//		frame.getContentPane().add(scrollPane);
+//		
+//		String[] columnNames = {"First Name",
+//                "Last Name",
+//                "Sport",
+//                "# of Years",
+//                "Vegetarian"};
+//		
+//		String[][] arr = new String[19][];
+//		String[] data = new String[19];
+//		try {
+//			Scanner sc = new Scanner(new File("C:\\Users\\SMHRD\\Desktop\\광주광역시_서구_자전거대여소_20190228.csv"));
+//			sc.nextLine();
+//			for (int i = 0; sc.hasNextLine();i++) {
+//				data = sc.nextLine().split(",");
+//				arr[i] = data;
+//			}
+//			System.out.println(Arrays.toString(arr[0]));
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//		table = new JTable(arr, columnNames);
+//		table.setEnabled(false);
+//		scrollPane.setViewportView(table);
 	}
 }
